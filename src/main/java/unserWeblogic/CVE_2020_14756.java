@@ -1,7 +1,7 @@
-package Weblogic;
+package unserWeblogic;
 // coherence-rest.jar
 
-import Weblogic.T3.T3;
+import unserWeblogic.T3.T3;
 import com.tangosol.coherence.rest.util.extractor.MvelExtractor;
 import com.tangosol.coherence.servlet.AttributeHolder;
 import com.tangosol.util.SortedBag;

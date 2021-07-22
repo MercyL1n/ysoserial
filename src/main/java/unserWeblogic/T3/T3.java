@@ -1,7 +1,7 @@
-package Weblogic.T3;
+package unserWeblogic.T3;
 
-import Weblogic.utils.BytesOperation;
-import Weblogic.utils.Serializables;
+import unserWeblogic.utils.BytesOperation;
+import unserWeblogic.utils.Serializables;
 import weblogic.rjvm.JVMID;
 import weblogic.security.acl.internal.AuthenticatedUser;
 
