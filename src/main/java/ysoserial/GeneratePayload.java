@@ -47,7 +47,7 @@ public class GeneratePayload {
                 ObjectPayload.Utils.releasePayload(payload, object);
             } else {//write
                 String filename;
-                String filepath = "E:\\myWSL\\nsfocus\\ysoserial\\";
+                String filepath = ".\\ser\\";
                 if (payloadType.contains("CommonsCollections")) {
                     filename = filepath + "cc" + payloadType.substring("CommonsCollections".length()) + ".ser";
                 } else {
