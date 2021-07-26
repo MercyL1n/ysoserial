@@ -16,7 +16,8 @@ public class T3 {
     public static void send(String host, String port, byte[] payload) throws Exception {
         Socket s = new Socket(host, Integer.parseInt(port));
         //AS ABBREV_TABLE_SIZE HL remoteHeaderLength 用来做skip的
-        String header = "t3 12.2.3\nAS:10\nHL:19\nnMS:10000000\n\n";
+//        String header = "t3 12.2.3\nAS:10\nHL:19\nnMS:10000000\n\n";
+        String header = "t3 10.3.6\nAS:10\nHL:19\nnMS:10000000\n\n";
 
 //        if (Main.cmdLine.hasOption("https")) {
 //            header = "t3s 7.0.0.0\nAS:10\nHL:19\n\n";
@@ -30,7 +31,6 @@ public class T3 {
 
         s.getOutputStream().write(header.getBytes());
         s.getOutputStream().flush();
-
         BufferedReader br = new BufferedReader(new InputStreamReader(s.getInputStream()));
         String versionInfo = br.readLine();
 //        if (Main.version == null) {

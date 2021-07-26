@@ -21,7 +21,6 @@ public class Main {
 		final String gadget = args[3];
 		final String payloadType = args[4];
 		final String payload = args[5];
-
         final Class<? extends ObjectPayload> payloadClass = ObjectPayload.Utils.getPayloadClass(gadget);
 
         if(!payloadType.equals("cmd")){

