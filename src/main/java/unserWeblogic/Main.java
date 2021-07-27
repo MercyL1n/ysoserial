@@ -21,14 +21,15 @@ public class Main {
 		final String gadget = args[3];
 		final String payloadType = args[4];
 		final String payload = args[5];
-        final Class<? extends ObjectPayload> payloadClass = ObjectPayload.Utils.getPayloadClass(gadget);
 
-        if(!payloadType.equals("cmd")){
-            System.out.println("现在只支持cmd");
-            System.exit(USAGE_CODE);
-        }
 
-        PayloadRunner.run((Class<? extends ObjectPayload<?>>) payloadClass, ip, port, protocol, payloadType, payload);
+
+//        if(!payloadType.equals("cmd")){
+//            System.out.println("现在只支持cmd");
+//            System.exit(USAGE_CODE);
+//        }
+
+        PayloadRunner.run(gadget, ip, port, protocol.toUpperCase(), payloadType, payload);
     }
 
     private static void printUsage() {
