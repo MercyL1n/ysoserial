@@ -23,7 +23,6 @@ public class Main {
 		final String payload = args[5];
 
 
-
 //        if(!payloadType.equals("cmd")){
 //            System.out.println("现在只支持cmd");
 //            System.exit(USAGE_CODE);
